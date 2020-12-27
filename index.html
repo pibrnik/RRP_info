@@ -345,7 +345,7 @@ function myFunction(skupina) {
                         <script>
                             const scriptURL = 'https://script.google.com/macros/s/AKfycbzYM2SRI-mViPTZ_6QwRa6dhziCH3fW4Oj-1AeoBoz8EEgrc4MXKxhh/exec'
                             const form = document.forms['preverjanje']
-                            if (el){
+                            if (form){
                                 form.addEventListener('submit', e => {
                                 e.preventDefault()
                             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
