@@ -344,13 +344,15 @@ function myFunction(skupina) {
                         <script>
                             const scriptURL = 'https://script.google.com/macros/s/AKfycbzYM2SRI-mViPTZ_6QwRa6dhziCH3fW4Oj-1AeoBoz8EEgrc4MXKxhh/exec'
                             const form = document.forms['preverjanje']
-
-                            form.addEventListener('submit', e => {
+                            if (el){
+                                form.addEventListener('submit', e => {
                                 e.preventDefault()
                             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                                 .then(response => console.log('Hvala! Vnos bo preverjen.', response))
                                 .catch(error => console.error('Napaka!', error.message))
                                 })
+                            }
+
                         </script>
                 </div>
 				</div>
