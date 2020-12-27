@@ -277,6 +277,31 @@ function myFunction(skupina) {
 	margin-bottom: 2vmin;
 }
             }
+
+                .i1{
+                    width:15.5em;
+                    height: 1.5em;
+                    background-color: whitesmoke;
+                    border: 2px solid gray;
+                    border-radius: 2em;
+                    padding-left: 1em;
+                    font-family: Barlow;
+                    color: gray;
+                    height:2em;
+                    font-size: 1em;
+                }
+                .i2{
+                    width:7em;
+                    height: 1.5em;
+                    background-color: whitesmoke;
+                    border: 2px solid gray;
+                    border-radius: 2em;
+                    padding-left: 1em;
+                    font-family: Barlow;
+                    color: gray;
+                    height:2em;
+                    font-size: 1em;
+                }
         </style>
 		</head>
 		<body onload="loadS()">
@@ -297,12 +322,34 @@ function myFunction(skupina) {
 					<img style="width:3em" src="https://cdn0.iconfinder.com/data/icons/business-management-line-2/24/megaphone-512.png">
 					</div>
 					<div class="center" style="padding-top: 2em">
-						<p>22. 10. 2020</p>
+						<p>28. december 2020</p>
 					</div>
 					<div class="center" style="width: 60%; padding-left: 20%">
-						<p class="announcment">Lep pozdrav! Danes sva prejela nove datume kolokvijev. Datume si prosim zapišite, prav tako si poglejte tudi datume izpitov, ki so bili naknadno objavljeni spodaj!</p>
-                        <p class="announcment">Prav tako bodite pozorni pri povezavah na predavanja, ki se lahko spreminjajo, kot se je to zgodilo danes pri elektrotehniki. Jaz poskušam vedno imeti objavljene zadnje verzije linkov, ampak lahko se zgodi, da profesor objavi nove ali pa celo ,tako (kot pri EL) besedilo povezave postane prava povezava, ampak link še kar vodi na staro.</p>
+						<p class="announcment">Lep pozdrav, na Dicord serverju opravljamo preverjanje identitete.</p>
+                        <p class="announcment">Vsi imate natanko 1 teden časa, da izpolnite spodnjo formo z vašim imenom in priimkom, discord uporabiškim imenom (ne nickname na serverju ampak uporabniško ime, vključujoč # oznako - npr. janez#2320). Kdor v določenem času ne bo izpolnil forme preverjanja, bo izgubil dostop do kanalov.</p>
 					</div>
+                <div class="center" style="width: 60%; padding-left: 20%; padding-top: 4vmin">
+                    <form name="submit-to-google-sheet">
+                        <span> <input class="i2" name="ime" type="text" placeholder="Ime" required>
+                        <input class="i2" name="priimek" type="text" placeholder="Priimek"></span>
+
+                        <span style="display:block; padding-top: 0.5em"></span><input class="i1" name="discord" type="text" placeholder="Discord uporabniško ime">
+                        <span style="display:block; padding-bottom: 1em; padding-top: 0.5em"><input class="i2" style="text-align: center;padding-left: 0;width:10em" name="vpisna_stevilka" type="text" placeholder="Vpisna številka"></span>
+                        <button class="b2" style="width:5em" type="submit">Potrdi</button>
+                        </form>
+
+                        <script>
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbyVzNxRiU8uoidFDcOkUWbygFnNOHaN9f1-SSR7hwL0j9h6y2iXpq3wcg/exec'
+                            const form = document.forms['submit-to-google-sheet']
+
+                            form.addEventListener('submit', e => {
+                                e.preventDefault()
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                .then(response => console.log('Hvala! Vnos bo preverjen.', response))
+                                .catch(error => console.error('Napaka!', error.message))
+                                })
+                        </script>
+                </div>
 				</div>
 				<div id="povezave" style="padding-top: 4em; width:100%; display: block">
 					<div>
