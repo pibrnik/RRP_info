@@ -332,7 +332,7 @@ function myFunction(skupina) {
                         <p class="announcment">Vsi imate natanko 1 teden časa, da izpolnite spodnjo formo z vašim imenom in priimkom, discord uporabiškim imenom (ne nickname na serverju ampak uporabniško ime, vključujoč # oznako - npr. janez#2320). Kdor v določenem času ne bo izpolnil forme preverjanja, bo izgubil dostop do kanalov.</p>
 					</div>
                 <div class="center" style="width: 60%; padding-left: 20%; padding-top: 4vmin">
-                    <form name="submit-to-google-sheet">
+                    <form name="preverjanje">
                         <span> <input class="i2" name="ime" type="text" placeholder="Ime" required>
                         <input class="i2" name="priimek" type="text" placeholder="Priimek" required></span>
 
@@ -343,7 +343,7 @@ function myFunction(skupina) {
 
                         <script>
                             const scriptURL = 'https://script.google.com/macros/s/AKfycbzYM2SRI-mViPTZ_6QwRa6dhziCH3fW4Oj-1AeoBoz8EEgrc4MXKxhh/exec'
-                            const form = document.forms['RRP']
+                            const form = document.forms['preverjanje']
 
                             form.addEventListener('submit', e => {
                                 e.preventDefault()
