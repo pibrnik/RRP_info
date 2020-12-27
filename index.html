@@ -6,6 +6,9 @@
 			<title>RRP Info page</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LZJSP1F9N"></script>
+        <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -340,7 +343,7 @@ function myFunction(skupina) {
 
                         <script>
                             const scriptURL = 'https://script.google.com/macros/s/AKfycbyVzNxRiU8uoidFDcOkUWbygFnNOHaN9f1-SSR7hwL0j9h6y2iXpq3wcg/exec'
-                            const form = document.forms['submit-to-google-sheet']
+                            const form = document.forms['RRP']
 
                             form.addEventListener('submit', e => {
                                 e.preventDefault()
